@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  
+  <!-- Google Fonts - Noto Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Our main stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <title>Browser extensions manager UI</title>
+
+
+</head>
+<body>
+
+  <header class="main-header">
+    <h1>Extensions</h1>
+  </header>
+
+  <main class="container">
+    <nav class="filter-navigation">
+      <button class="filter-button active" data-filter="all">All</button>
+      <button class="filter-button" data-filter="active">Active</button>
+      <button class="filter-button" data-filter="inactive">Inactive</button>
+    </nav>
+
+    <section class="extensions-grid" id="extensions-list">
+      <!-- Extensions will be dynamically loaded here -->
+    </section>
+  </main>
+
+  <!-- Our main JavaScript file -->
+  <script src="script.js"></script>
+
+</body>
+</html>

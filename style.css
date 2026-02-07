@@ -1,0 +1,158 @@
+/* Basic Reset & Global Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* CSS Variables for Colors */
+:root {
+    --neutral-900: hsl(227, 75%, 14%);
+    --neutral-800: hsl(226, 25%, 17%);
+    --neutral-700: hsl(225, 23%, 24%);
+    --neutral-600: hsl(226, 11%, 37%);
+    --neutral-300: hsl(0, 0%, 78%);
+    --neutral-200: hsl(217, 61%, 90%);
+    --neutral-100: hsl(0, 0%, 93%);
+    --neutral-0: hsl(200, 60%, 99%);
+
+    --red-400: hsl(3, 86%, 64%);
+    --red-500: hsl(3, 71%, 56%);
+    --red-700: hsl(3, 77%, 44%);
+
+    --light-gradient: linear-gradient(180deg, #EBF2FC 0%, #EEF8F9 100%);
+    --dark-gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
+}
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    line-height: 1.6;
+    background: var(--neutral-0); /* Lightest background */
+    color: var(--neutral-700); /* Default text color */
+    font-size: 16px; /* Paragraph font size */
+}
+
+/* Main Header */
+.main-header {
+    background-color: var(--neutral-900);
+    color: var(--neutral-0);
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
+
+.main-header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Filter Navigation */
+.filter-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.filter-button {
+    background-color: var(--neutral-100);
+    color: var(--neutral-700);
+    border: 1px solid var(--neutral-200);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.filter-button:hover {
+    background-color: var(--neutral-200);
+    color: var(--neutral-800);
+}
+
+.filter-button.active {
+    background-color: var(--neutral-700);
+    color: var(--neutral-0);
+    border-color: var(--neutral-700);
+}
+
+/* Extensions Grid */
+.extensions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 1.5rem;
+}
+
+/* Extension Card */
+.extension-card {
+    background-color: #fff;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.extension-card.inactive {
+    opacity: 0.6; /* Visually dim inactive cards */
+    filter: grayscale(50%); /* Make them slightly desaturated */
+}
+
+.extension-card .extension-logo {
+    width: 60px; /* Adjust as needed */
+    height: 60px;
+    margin-bottom: 1rem;
+}
+
+.extension-card .extension-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--neutral-800);
+    margin-bottom: 0.5rem;
+}
+
+.extension-card .extension-description {
+    font-size: 0.95rem;
+    color: var(--neutral-600);
+    margin-bottom: 1.5rem;
+    flex-grow: 1; /* Allows description to take available space */
+}
+
+.extension-card .remove-button,
+.extension-card .toggle-active-button {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+    margin-top: 0.5rem; /* Space between buttons */
+}
+
+.extension-card .remove-button {
+    background-color: var(--red-500);
+    color: var(--neutral-0);
+}
+
+.extension-card .remove-button:hover {
+    background-color: var(--red-700);
+}
+
+.extension-card .toggle-active-button {
+    background-color: var(--neutral-700);
+    color: var(--neutral-0);
+}
+
+.extension-card .toggle-active-button:hover {
+    background-color: var(--neutral-800);
+}
